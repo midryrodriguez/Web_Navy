@@ -15,6 +15,9 @@ public class CartPage extends MenuPage {
     @FindBy(className = "title")
     private WebElement title;
 
+    @FindBy(id = "checkout")
+    private WebElement checkoutButton;
+
     public CartPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -26,5 +29,9 @@ public class CartPage extends MenuPage {
 
     public int getCartItemsCount() {
         return cartItems.size();
+    }
+
+    public void clickCheckout() {
+        checkoutButton.click();
     }
 }
