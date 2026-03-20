@@ -4,6 +4,7 @@
         <classes>
             <class name="tests.LoginTest"/>
             <class name="tests.PurchaseTest"/>
+            <class name="tests.RemoveProductsTest"/>
         </classes>
     </test>
 </suite>

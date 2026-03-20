@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,5 +34,20 @@ public class CartPage extends MenuPage {
 
     public void clickCheckout() {
         checkoutButton.click();
+    }
+
+    public void removeFirstNProducts(int n) {
+        int times = Math.min(n, cartItems.size());
+
+        for (int i = 0; i < times; i++) {
+            List<WebElement> currentItems = driver.findElements(By.className("cart_item"));
+            WebElement item = currentItems.get(0);
+            WebElement removeButton = item.findElement(By.tagName("button"));
+            removeButton.click();
+        }
+    }
+
+    public boolean isCartEmpty() {
+        return driver.findElements(By.className("cart_item")).isEmpty();
     }
 }
