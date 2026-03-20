@@ -28,4 +28,8 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         loginButton.click();
     }
+
+    public boolean isLoginPageDisplayed() {
+        return loginButton.isDisplayed();
+    }
 }
